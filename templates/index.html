@@ -4,10 +4,11 @@
         <title>Realtimer</title>
     </head>
 
-    <body>
-        <script type="text/javascript" src="static/jquery-1.11.0.js"></script>
-        <script type="text/javascript" src="static/socket.io.js"></script>
-        <script type="text/javascript">
+    <body></body>
+
+    <script type="text/javascript" src="static/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="static/socket.io.js"></script>
+    <script type="text/javascript">
         $(document).ready(function() {
             WEB_SOCKET_SWF_LOCATION = "/static/WebSocketMain.swf";
             WEB_SOCKET_DEBUG = true;
@@ -18,9 +19,9 @@
             console.log("[x] Sent        : " + client_message);
 
             socket.on('channel-a', function(message) {
-                console.log("[x] Received    : " + message);
+                console.log("[x] Received    : " + message.substring(0, 100));
             });
         });
-        </script>
-    </body>
+    </script>
+
 </html>
